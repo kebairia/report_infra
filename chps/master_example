@@ -1,0 +1,41 @@
+
+
+1) Acknowledgements
+
+
+2) Abstract
+
+
+3) Introduction: introduce the problematic of our thesis
+
+
+4) Chapter1: Video management systems
+   -- on this chapter will talk in general about video surveillance
+      and the VMS(definitions,characteristics, how it works ... )
+
+
+5) chapter2: IOT, cloud computing , egde and fog computing 
+        
+       part1: IOT
+          -- on this part we'll talk about IOT(definitions, architectures ...)
+        
+        
+       part2: cloud computing and IOT
+          -- we'll talk about cloud computing (definitions, architectures ..)
+          -- how cloud computing work with IOT
+          -- then we'll introduce the problematic of cloud computing(latency, security, privacy ...)  with IOT
+        
+        
+       part3: egde and Fog computing
+          -- this part will contain all about egde and fog (definitions, characteristics, ...) 
+
+
+
+6) chapter3: egde and fog computing on VMS (state of art)
+             -- talk about how egde works with VMS
+             -- Comparative study on the existing solutions of egde on VMS
+
+
+7) Conclusion
+    
+       

@@ -1,0 +1,44 @@
+#  -*- mode: org; -*-
+
+#+latex_header: \pagenumbering{roman}
+#+begin_export latex
+\begin{center}
+\begin{large}
+  \textsc{Abstract}
+\end{large}
+\end{center}
+%
+\noindent
+%
+#+end_export
+Recent technological advancements have altered the way research is done.
+
+It is now possible to quantify and simulate a variety of distinct features of complex phenomena,
+particularly real-world phenomena, and striving to model this phenomenon using modern technology in
+order to eliminate the majority of the problems that arise as a result of it, while minimizing risks
+to the bare minimum.
+
+Traditional approaches need us to individually acquire and install custom hardware, then configure,
+integrate, and commission all elements of it before presenting our new environment.
+This both introduced delays and opened risks.
+
+As enterprises demand more flexible, portable, and responsive infrastructure, these approaches are
+no longer acceptable. Therefore, the move to a more software-defined, virtual hardware stack and
+Infrastructure as Code approach is crucial for removing these impediments and meeting the needs of our modern
+enterprise.
+Here, we attempt to illustrate the advancements that occurred at the infrastructure level,
+including how these solutions evolved, their utility, benefits, and drawbacks, starting with video
+surveillance systems and how they evolve, passing by the internet of things, Cloud, and Edge computing,
+and how they revolutionize the way we deal with infrastructure, and finally presenting a state of the
+art of using Video Surveillance system on Edge computing.
+
+{{{clearpage}}}
+
+* Local Variables                                           :noexport:ignore:
+# Local Variables:
+# mode: org
+# org-export-allow-bind-keywords: t
+# eval: (setq display-fill-column-indicator-column 100)
+# eval: (display-fill-column-indicator-mode)
+# eval: (flyspell-mode t)
+# End:

@@ -1,0 +1,18 @@
+* Conclusion
+@@latex:\noindent@@
+We can now see that these technologies and approaches are important pieces of a larger puzzle, starting
+with the acrlong:iot, which makes our environment interactive and allows us to extract information
+about it and use it again for better control over it, and cloud computing, which aimed to improve
+the user experience while avoiding the resource-constrained nature of `things'.
+And Edge computing, which can be thought of as a complement to cloud computing by offloading some
+of the ordinary computing operations near the network's edge.
+
+
+# Local Variables:
+# mode: org
+# org-export-allow-bind-keywords: t
+# eval: (setq display-fill-column-indicator-column 100)
+# eval: (display-fill-column-indicator-mode)
+# eval: (org-id-update-id-locations)
+# eval: (flyspell-mode t)
+# End:

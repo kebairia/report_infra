@@ -1,0 +1,16 @@
+* Relevant Theory 
+** Fog & Edge computing
+** Infrastructure as Code
+** Virtualization
+** Containerization
+** Microservices
+** High availability and Load Balancing
+
+* Local Variables                                           :noexport:ignore:
+# Local Variables:
+# mode: org
+# org-export-allow-bind-keywords: t
+# eval: (setq display-fill-column-indicator-column 100)
+# eval: (display-fill-column-indicator-mode)
+# eval: (flyspell-mode t)
+# End:

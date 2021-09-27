@@ -1,0 +1,40 @@
+* Our Contribution
+** Main contribution of our project
+** System Design
+** System implementation
+*** Compute Units (Virtualization)
+:PROPERTIES:
+:CUSTOM_ID: virt
+:END:
+*** Provisioning & Automation
+:PROPERTIES:
+:CUSTOM_ID: pr_and_auto
+:END:
+*** High availability and Load Balancing
+:PROPERTIES:
+:CUSTOM_ID: ha
+:END:
+*** Storage
+:PROPERTIES:
+:CUSTOM_ID: storage
+:END:
+*** Security
+:PROPERTIES:
+:CUSTOM_ID: sec
+:END:
+*** Containarization and microservices
+:PROPERTIES:
+:CUSTOM_ID: cont_and_micro
+:END:
+*** Network Configuration
+*** Test and Results
+*** Conclusion
+
+* Local Variables                                           :noexport:ignore:
+# Local Variables:
+# mode: org
+# org-export-allow-bind-keywords: t
+# eval: (setq display-fill-column-indicator-column 100)
+# eval: (display-fill-column-indicator-mode)
+# eval: (flyspell-mode t)
+# End:

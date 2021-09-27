@@ -1,0 +1,65 @@
+#  -*- mode: org; -*-
+
+* Acknowledgment                                                         :ignore:
+#+begin_export latex
+\begin{center}
+    \section*{Acknowledgment}
+\end{center}
+%% \addcontentsline{toc}{section}{\protect\numberline{}Acknowledgement}
+#+end_export
+No one can make it from naive enthusiasm to fnished dissertation without
+a lot of support, both technical and emotional. we were fortunate to be supported
+by a committee with diverse perspectives, taste, and wisdom—and to have
+each member enter the scene at just the right time.
+
+We would cordially like to acknowledge the constant support of
+my supervisors.\\
+*Pr. A. Rahmoun* and  *Dr H. Bensenane*.
+We have been amazingly fortunate to have an inspiring and friendly
+supervisors. Their consistent notation and constructive criticisms
+in my writings have proved to be instrumental in achieving my goals.\\
+*The Higher School Of Computer Science -- 08 Mai 1945, SBA*, for
+giving me an opportunity to do my masters. we feel very privileged to be
+part of a brilliant institute that had polished my skills. we cant thank my
+university enough.
+
+Last but not the least, this acknowledgement would be incomplete if we 
+don't mention our team mates and friends *Moubarek Safari* & *Baali Ahmed*,
+who participated with us in this project, whether by advice, counseling and support.\\
+
+
+#+begin_flushright
+Thank you all.
+#+end_flushright
+{{{newline}}}
+{{{newline}}}
+{{{newline}}}
+#+begin_flushright
+/Kebairia Zakaria & Khadraoui AlaaEdine/ \\
+@@latex: \today @@
+#+end_flushright
+{{{clearpage}}}
+
+{{{newline}}}
+{{{newline}}}
+{{{newline}}}
+{{{newline}}}
+{{{newline}}}
+{{{newline}}}
+{{{newline}}}
+{{{newline}}}
+{{{newline}}}
+#+begin_quote
+/Any sufficiently advanced technology is indistinguishable from magic.\\/
+---Arthur C. Clarke
+#+end_quote
+{{{clearpage}}}
+
+* Local Variables                                           :noexport:ignore:
+# Local Variables:
+# mode: org
+# org-export-allow-bind-keywords: t
+# eval: (setq display-fill-column-indicator-column 100)
+# eval: (display-fill-column-indicator-mode)
+# eval: (flyspell-mode t)
+# End:
