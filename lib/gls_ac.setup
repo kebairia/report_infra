@@ -1,0 +1,103 @@
+# -*- mode: org; -*-
+# -------------------------------------
+#  Kebairia Zakaria
+#  Glossaries and acronyms setup
+#  Master: Serverless Edge computing
+# -------------------------------------
+* Macros                                                           :noexport:
+#+MACRO: acronym #+latex_header: \newacronym[description={$1}]{$2}{$2}{$3}
+#+MACRO: glossaryentry #+latex_header: \newglossaryentry{$1}{name={$2},description={$3},sort={$4}}
+
+#+latex_header: \usepackage{glossaries}
+#+latex_header: \makeglossaries
+
+* Glossaries                                                       :noexport:
+#+begin_export latex
+\newglossaryentry{LaTeX}{%
+  name        = {\LaTeX},
+  description = {A document preparation system},
+  sort        = {LaTeX},
+}
+#+end_export
+
+#+begin_export latex
+\newglossaryentry{Real numbers}{%
+  name        = {$\real$},
+  description = {The set of real numbers},
+  sort        = {Real numbers},
+}
+#+end_export
+#+begin_export latex
+\newglossaryentry{Natural numbers}{%
+  name        = {$\natural$},
+  description = {The set of natural numbers},
+  sort        = {Natural numbers},
+}
+#+end_export
+# {{{glossaryentry(Real numbers,$\real$, FOG layer , something )}}}
+* Acronyms                                                         :noexport:
+#+latex_header_extra: \newacronym{os}{OS}{Operating System}
+#+latex_header_extra: \newacronym{ip}{IP}{Internet Protocol}
+#+latex_header_extra: \newacronym{tcp}{TCP}{Transmission Control Protocol}
+#+latex_header_extra: \newacronym{http}{HTTP}{Hypertext Transfer Protocol}
+#+latex_header_extra: \newacronym{iot}{IoT}{Internet of Things}
+#+latex_header_extra: \newacronym{rfid}{RFID}{Radio Frequency Identification}
+#+latex_header_extra: \newacronym{vms}{VMS}{Video Management System}
+#+latex_header_extra: \newacronym{vss}{VSS}{Video Surveillance System}
+#+latex_header_extra: \newacronym{cctv}{CCTV}{Closed-Circuit Television}
+#+latex_header_extra: \newacronym{lan}{LAN}{Local Aria Network}
+#+latex_header_extra: \newacronym{wan}{WAN}{Wide Aria Network}
+#+latex_header_extra: \newacronym{vlan}{VLAN}{Virtual LAN}
+#+latex_header_extra: \newacronym{nist}{NIST}{National Institute of Standards and Technology}
+#+latex_header_extra: \newacronym{itu}{ITU}{International Telecommunication Union}
+#+latex_header_extra: \newacronym{saas}{SaaS}{Service as a Service}
+#+latex_header_extra: \newacronym{paas}{PaaS}{Platform as a Service}
+#+latex_header_extra: \newacronym{iaas}{IaaS}{Infrastructure as a Service}
+#+latex_header_extra: \newacronym{sa}{SA}{Situational Awareness}
+#+latex_header_extra: \newacronym{1gss}{1GSS}{First Generation Video Surveillance Systems}
+#+latex_header_extra: \newacronym{2gss}{2GSS}{Second Generation Video Surveillance Systems}
+#+latex_header_extra: \newacronym{3gss}{3GSS}{Third Generation Video Surveillance Systems}
+#+latex_header_extra: \newacronym{lisp}{LISP}{Locator ID Separation Protocol}
+#+latex_header_extra: \newacronym{gps}{GPS}{Global Positioning System}
+#+latex_header_extra: \newacronym{api}{API}{Application Programming Interface}
+#+latex_header_extra: \newacronym{nfv}{NFV}{Network Functions Virtualization}
+#+latex_header_extra: \newacronym{sdn}{SDN}{Software-Defined Networking }
+#+latex_header_extra: \newacronym{ntp}{NTP}{Network Time Protocol}
+#+latex_header_extra: \newacronym{dns}{DNS}{Domain Name System}
+#+latex_header_extra: \newacronym{bac}{BAC}{Blockchain Access Control}
+#+latex_header_extra: \newacronym{mqtt}{MQTT}{Message Queuing Telemetry Transport}
+#+latex_header_extra: \newacronym{divs}{DIVS}{Distributed Intelligent Video Surveillance}
+#+latex_header_extra: \newacronym{dl}{DL}{Deep Learning}
+#+latex_header_extra: \newacronym{gprs}{GPRS}{General Packet Radio System}
+#+latex_header_extra: \newacronym{civms}{CiVMS}{Central Intelligent Video Management System}
+#+latex_header_extra: \newacronym{psim}{PSIM}{Physical Security Information Management}
+#+latex_header_extra: \newacronym{cnn}{CNN}{Convolutional Neural Network}
+#+latex_header_extra: \newacronym{lcnn}{L-CNN}{Lightweight Convolution Neural Network}
+#+latex_header_extra: \newacronym{rcnn}{RCNN}{Region-based Convolution Neural Network}
+#+latex_header_extra: \newacronym{sbc}{SBC}{Single Board Computer}
+#+latex_header_extra: \newacronym{lpddr}{LPDDR}{Low-Power Double Data Rate}
+ 
+* Description                                              :noexport:ARCHIVE:
+#  Here is an example acronym definition
+#  #+latex_header_extra: \newacronym{lvm}{LVM}{Logical Volume Manager}
+
+#  New links defined:
+#  gls:name A reference to the glossary entry NAME.
+#  glspl:name The plural version of the entry
+#  Gls:name Capitalized glossary entry
+#  Glspl: Capitalized, plural glossary entry
+#  [[gslink:name][alternate text]]
+#  glssymbol:name Outputs the symbol value of the glossary entry settings.
+#  glsdesc:name  The description of name
+
+#  The links export to LaTeX. You can click on the link and jump to the
+#  definition. The links have tooltips for the definitions.
+
+#  Acronym links
+#  acrshort:label
+#  acrfull:label
+#  acrlong:label
+#  ac:label  (exports to \gls{label})
+#  Ac:label  (exports to \Gls{label})
+#  acp:label (exports to \glspl{label})
+#  Acp:label (exports to \Glspl{label})
