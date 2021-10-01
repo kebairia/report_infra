@@ -26,7 +26,6 @@
 #+include: ./chps/ack.org
 * Mainmatter                                                         :ignore:
 #+begin_comment
-
 The table of contents is where you list the chapters and major sections of your dissertation, along with their page numbers.
 A clear and well-formatted contents page is essential as it indicates a quality paper is to follow.
 

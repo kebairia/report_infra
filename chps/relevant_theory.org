@@ -5,7 +5,6 @@
 ** Containerization
 ** Microservices
 ** High availability and Load Balancing
-
 * Local Variables                                           :noexport:ignore:
 # Local Variables:
 # mode: org
