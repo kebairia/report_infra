@@ -64,8 +64,8 @@
   \begin{center}
     \begin{singlespace*}
       \begin{Huge}
-          \textbf{Serverless Edge Computing}\\
-          Suspicious behavior detection using Deep Learning\par
+          \textbf{Edge and Fog Computing}\\
+          Based Video Management System
       \end{Huge}
       %
       \vskip 0.25cm
