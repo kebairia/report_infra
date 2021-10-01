@@ -10,23 +10,72 @@
 :PROPERTIES:
 :CUSTOM_ID: pr_and_auto
 :END:
+**** Vagrant 
+**** Ansible
+
 *** High availability and Load Balancing
 :PROPERTIES:
 :CUSTOM_ID: ha
 :END:
+
+@@latex:\noindent@@
+In order to achieve a higher level of high availability for our services and virtual machines,
+we used a variety of technologies and methodologies, and we'll go through the different ways,
+why we use them, and their benefits and drawback below.
+**** Failover services 
+@@latex:\noindent@@
+When attempting to implement a highly available service, we must consider the type of service
+for which we are attempting to do this.
+
+When an active application, server, system, hardware component, or network in a computer network
+fails or terminates abnormally, /failover/ switches to a redundant or standby computer server,
+system, hardware component, or network.
+
+Many services, like as acrshort:dns and acrshort:dhcp, have built-in failover, and we took advantage of this
+to establish a highly available service, especially for crucial services like these.
+
+This offload the burden of implementing the failover yourself, moreover, if a service implements
+the failover itself, it is more likely to be well integrated and supported than if you do it
+yourself with additional apps.
+# additional apps means additional threats
+
+{{{fourstar}}}
+Take, for example, DNS service. When attempting to establish a DNS service, you will find
+three sorts of dns servers: a Primary acrshort:dns server, a Secondary acrshort:dns server, and a Cache-only server.
+In this case, the secondary acrshort:dns servers serve as failover for the primary one, meaning
+that if the primary acrshort:dns server fails, the backup DNS server takes over and handles
+the queries.
+
+We used the =named= package to implement our acrshort:dns server, and the package support the setup of
+a primary and secondary dns server.
+With the use a priority concept in the configuration file, we can put a lower priority value
+on the secondary dns server configuration file, and by that it will be a backup server.
+On the client machines, and by using the =NetworkManager= utility, we can specify up to 4 acrshort:dns
+servers in the =/etc/resolv.conf=, and this is more than enough.
+**** HAProxy & Keepalived
+**** Pacemaker
 *** Storage
 :PROPERTIES:
 :CUSTOM_ID: storage
 :END:
+**** GlusterFS
+**** NFS
+**** NFS-Ganesha
 *** Security
 :PROPERTIES:
 :CUSTOM_ID: sec
 :END:
+**** OpenVPN 
 *** Containarization and microservices
 :PROPERTIES:
 :CUSTOM_ID: cont_and_micro
 :END:
+**** Kubernetes 
+**** Docker
 *** Network Configuration
+**** Management Network
+**** Public Network & Bridged Network
+**** Private Network
 *** Test and Results
 *** Conclusion
 
