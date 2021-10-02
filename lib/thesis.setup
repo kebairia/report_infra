@@ -66,6 +66,9 @@ The symbol printed at the end of a proof is called the “QED symbol”. To quot
 #+OPTIONS: toc:1  H:4 tags:nil
 
 * LaTeX Export Headers and Options                                 :noexport:
+** Enabling the possibility of rotatin a table
+use =#+ATTR_LATEX: :float sideways= to rotate a table or an image
+#+latex_header: \usepackage{rotating}
 ** latex compiler
 #+latex_compiler: lualatex
 ** Colors
