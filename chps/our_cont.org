@@ -1,6 +1,14 @@
 * Our Contribution
 ** Main contribution of our project
 ** System Design
+#+NAME: fig:overall_arch_old
+#+caption: The old architecture approach
+[[file:~/dox/wrk/pfe/docs/pfe_thesis/figures/overall_old.png]]
+
+#+NAME: fig:overall_arch
+#+caption: The overall architecture
+#+ATTR_LATEX: :float sideways
+[[file:~/dox/wrk/pfe/docs/pfe_thesis/figures/overall.png]]
 ** System implementation
 *** Compute Units (Virtualization)
 :PROPERTIES:
@@ -22,6 +30,10 @@
 In order to achieve a higher level of high availability for our services and virtual machines,
 we used a variety of technologies and methodologies, and we'll go through the different ways,
 why we use them, and their benefits and drawback below.
+
+#+NAME: fig:overall_ha_diagram
+#+caption: High Availibility diagram
+[[file:~/dox/wrk/pfe/docs/pfe_thesis/figures/ha/overall_ha_diagram.png]]
 **** Failover services 
 @@latex:\noindent@@
 When attempting to implement a highly available service, we must consider the type of service
@@ -73,8 +85,15 @@ servers in the =/etc/resolv.conf=, and this is more than enough.
 **** Kubernetes 
 **** Docker
 *** Network Configuration
+
+#+NAME: fig:network_net_types_and_confs
+#+caption: Network types that we used and their configurations
+[[file:~/dox/wrk/pfe/docs/pfe_thesis/figures/network/net_conf_and_mnm_configuration.png]]
 **** Management Network
 **** Public Network & Bridged Network
+#+NAME: fig:network_public_bridge_network
+#+caption: How Public interfaces and bridge network work
+[[file:~/dox/wrk/pfe/docs/pfe_thesis/figures/network/network_bridge_private_pfe.png]]
 **** Private Network
 *** Test and Results
 *** Conclusion
