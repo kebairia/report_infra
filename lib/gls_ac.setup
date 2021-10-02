@@ -64,6 +64,7 @@
 #+latex_header_extra: \newacronym{sdn}{SDN}{Software-Defined Networking }
 #+latex_header_extra: \newacronym{ntp}{NTP}{Network Time Protocol}
 #+latex_header_extra: \newacronym{dns}{DNS}{Domain Name System}
+#+latex_header_extra: \newacronym{dhcp}{DHCP}{something here}
 #+latex_header_extra: \newacronym{bac}{BAC}{Blockchain Access Control}
 #+latex_header_extra: \newacronym{mqtt}{MQTT}{Message Queuing Telemetry Transport}
 #+latex_header_extra: \newacronym{divs}{DIVS}{Distributed Intelligent Video Surveillance}
