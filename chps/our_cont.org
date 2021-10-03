@@ -190,6 +190,9 @@ still a wonderful choice for building a robust infrastructure.
 :CUSTOM_ID: storage
 :END:
 **** GlusterFS
+:PROPERTIES:
+:CUSTOM_ID: glusterfs
+:END:
 @@latex:\noindent@@
 Gluster is a distributed file system that combines disk storage resources from numerous hosts
 into a single global namespace.
