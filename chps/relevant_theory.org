@@ -53,10 +53,6 @@ example: oracle virtual box, Vmware workstation
 ** Containerization
 ** Microservices
 ** High availability and Load Balancing
-#+name: fig:ha_overall
-#+caption: Virtualization Overall 
-#+attr_latex: :width 13cm
-[[file:~/dox/wrk/pfe/docs/pfe_thesis/figures/ha/overall_ha_diagram.jpeg]]
 * Local Variables                                           :noexport:ignore:
 # Local Variables:
 # mode: org
