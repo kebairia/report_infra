@@ -68,8 +68,9 @@ yourself with additional apps.
 # additional apps means additional threats
 
 {{{fourstar}}}
-Take, for example, DNS service. When attempting to establish a DNS service, you will find
-three sorts of dns servers: a Primary acrshort:dns server, a Secondary acrshort:dns server, and a Cache-only server.
+Take, for example, acrshort:dns service. When attempting to establish a acrshort:dns service,
+you will find three sorts of dns servers: a Primary acrshort:dns server, a Secondary acrshort:dns
+server, and a Cache-only server.
 In this case, the secondary acrshort:dns servers serve as failover for the primary one, meaning
 that if the primary acrshort:dns server fails, the backup DNS server takes over and handles
 the queries.
@@ -160,8 +161,9 @@ that allows the administrator to precisely specify the relationships (both order
 between cluster resources.
 
 {{{fourstar}}}
-We employed pacemaker with Syslog servers and [[https://www.gluster.org/][GlusterFS]] since these two services have special
-requirements that HAProxy cannot manage, and they do not have their own built-in failover.
+We employed pacemaker with Syslog servers and [[https://www.gluster.org/][GlusterFS]] (see Section {{{crefs(glusterfs)}}})
+since these two services have special requirements that HAProxy cannot manage, and they do not
+have their own built-in failover.
 
 The amazing part about Pacemaker is that it allows you complete control over how your services
 and resources work.
