@@ -71,12 +71,11 @@ starting by /acrlong:vss/, moving to /acrlong:iot/, then the Cloud, Edge and Fog
 :PROPERTIES:
 :ALT_TITLE: ii Background
 :END:
-{{{part(Background)}}}
+{{{part(Epilogue)}}}
 The second part of this thesis presents definitions of various concepts in computing literature
 starting by /acrlong:vss/, moving to /acrlong:iot/, then the Cloud, Edge and Fog computing
 {{{part_end}}}
 #+include: ./chps/future_work.org
-#+include: ./chps/cns.org
 ** Conclusion                                                      :ignore:
 :PROPERTIES:
 :ID:       cons
