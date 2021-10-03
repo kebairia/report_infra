@@ -203,15 +203,28 @@ systems, including the one we use, and can be used in conjunction with other tec
 such as [[acrshort:nfs][NFS]] for remote file access.
 **** NFS
 @@latex:\noindent@@
-ac:nfs is a distributed file system protocol created by Sun Microsystems (Sun) in 1984, that
-allows a user on a client computer to access files via a computer network in the same way
-that local storage is accessed.
+acrshort:nfs is a well known and venerable network protocol created by Sun Microsystems (Sun)
+in 1984, and it is widely used.
+[[acrshort:nfs]]v4 is the latest version of the protocol. It fully reconsiders its semantic and the way acrshort:nfs
+can be used.
+The fundamental function of acrshort:nfs is to allows a user on a client computer to access
+files via a computer network in the same way that local storage is accessed.
 
-We used acrshort:nfs with Glusterfs to gain remote access to our file system, but acrshort:nfs
-has one limitation: it does not support the extending feature that Glusterfs provides.
+
+Many businesses still rely on NFS to access data from a variety of operating systems and applications.
+Glusterfs has native acrshort:nfs support (referred to as Gluster-NFS), which serves as a GlusterFS
+client on the same node as the GlusterFS server, but it support only [[acrshort:nfs]]v3 protocol.
+
+Also, native acrshort:nfs does not support the extending feature that GlusterFS provides.
 In this case, we used a technology called [[https://nfs-ganesha.github.io/][NFS-Ganesha]], which attempts to implement this
 feature and overcome the limitations of classical acrshort:nfs.
+
 **** NFS-Ganesha
+ NFS-Ganesha is a user-space [[acrshort:nfs][NFS]] file server that supports [[acrshort:nfs][NFS]]v3, v4, v4.1, and p[[acrshort:nfs][NFS]] protocols.
+ It has a FUSE-compatible [[Ac:fsal][File System Abstraction Layer (FSAL)]] that allows file-system developers
+ to add their own storage mechanism and access it from any [[acrshort:nfs][NFS]] client. NFS-Ganesha may access
+ FUSE filesystems directly through its [[acrshort:fsal][FSAL]], avoiding the need for data to be copied to or
+ from the kernel, potentially improving response times. 
 *** Security
 :PROPERTIES:
 :CUSTOM_ID: sec
