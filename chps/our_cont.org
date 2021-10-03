@@ -80,6 +80,30 @@ With the use a priority concept in the configuration file, we can put a lower pr
 on the secondary dns server configuration file, and by that it will be a backup server.
 On the client machines, and by using the =NetworkManager= utility, we can specify up to 4 acrshort:dns
 servers in the =/etc/resolv.conf=, and this is more than enough.
+#+name: code:master_dns_conf
+#+begin_src sh
+  include "/etc/named.rfc1912.zones";
+  include "/etc/named.root.key";
+  include "/etc/rndc.key";
+  
+  # Allow rndc management
+  controls {
+          inet 127.0.0.1 port 953 allow { 127.0.0.1; } keys { "rndc-key"; };
+  };
+  
+  # Limit access to local network and esiedge LAN
+  acl "clients" {
+          127.0.0.0/8;
+          192.168.3.0/24;
+  };
+  
+  options {
+          listen-on port 53 { 127.0.0.1; 192.168.3.2; }; ## MASTER
+          listen-on-v6 { none; };
+          directory 	"/var/named";
+          dump-file 	"/var/named/data/cache_dump.db";
+  
+#+end_src
 **** HAProxy & Keepalived
 @@latex:\noindent@@
 For the high availability based on load balancing, we used HAProxy .
