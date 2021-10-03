@@ -70,6 +70,8 @@
 #+latex_header_extra: \newacronym{dl}{DL}{Deep Learning}
 #+latex_header_extra: \newacronym{cnn}{CNN}{Convolutional Neural Network}
 #+latex_header_extra: \newacronym{kvm}{KVM}{Kernel-based Virtual Machine}
+#+latex_header_extra: \newacronym{vrrp}{VRRP}{Virtual Redundancy Routing Protocol}
+#+latex_header_extra: \newacronym{nfs}{NFS}{Network File System}
  
 * Description                                              :noexport:ARCHIVE:
 #  Here is an example acronym definition
