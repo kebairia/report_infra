@@ -22,6 +22,7 @@
 
 #+NAME: fig:virt_overall_virt
 #+caption: Virtualization
+#+ATTR_LATEX: :float sideways
 [[file:~/dox/wrk/pfe/docs/pfe_thesis/figures/virt/overall_virt.png]]
 *** Provisioning & Automation
 :PROPERTIES:
@@ -40,7 +41,6 @@
 :PROPERTIES:
 :CUSTOM_ID: ha
 :END:
-
 @@latex:\noindent@@
 In order to achieve a higher level of high availability for our services and virtual machines,
 we used a variety of technologies and methodologies, and we'll go through the different ways,
@@ -48,6 +48,7 @@ why we use them, and their benefits and drawback below.
 
 #+NAME: fig:overall_ha_diagram
 #+caption: High Availibility diagram
+#+attr_latex: :width 12cm
 [[file:~/dox/wrk/pfe/docs/pfe_thesis/figures/ha/overall_ha_diagram.png]]
 **** Failover services 
 @@latex:\noindent@@
@@ -74,24 +75,88 @@ that if the primary acrshort:dns server fails, the backup DNS server takes over 
 the queries.
 
 We used the =named= package to implement our acrshort:dns server, and the package support the setup of
-a primary and secondary dns server.
+a primary and secondary acrshort:dns server.
 With the use a priority concept in the configuration file, we can put a lower priority value
 on the secondary dns server configuration file, and by that it will be a backup server.
 On the client machines, and by using the =NetworkManager= utility, we can specify up to 4 acrshort:dns
 servers in the =/etc/resolv.conf=, and this is more than enough.
 **** HAProxy & Keepalived
+@@latex:\noindent@@
+For the high availability based on load balancing, we used HAProxy .
+
+HAProxy cite:anicas-2021-introd-haprox (High Availability Proxy) is a popular open source
+[[acrshort:tcp][TCP]]/[[acrshort:http][HTTP]] (Layer 4 & 7) Load Balancer and proxy solution that runs on Linux, Solaris, and FreeBSD.
+Its most typical application is to distribute workload across numerous servers to increase
+server performance and reliability (e.g. web, application, database). 
+HAProxy is well-known for its speed and efficiency, and it is used by a lot of well-known
+websites, like [[https://www.github.com][GitHub]], [[https://stackoverflow.com/][Stack Overflow]], [[https://www.reddit.com/][Reddit]], [[https://twitter.com/][Twitter]], and so on.
+
+HAProxy, as previously stated, works on both layer 4 and layer 7.
+Layer 4 (transport layer) load balancing is the simplest approach to distribute network traffic
+to multiple servers.
+This kind of load balancing forwards user traffic based on [[acrshort:ip][IP]] range and port, but we can utilize
+a more complex technique by using layer 7 (application layer) load balancing.
+The load balancer can use layer 7 to forward requests to different backend servers depending
+on the content of the user's request. 
+This load balancing strategy allows you to run many web application servers under the same
+domain and port; however, the key disadvantage is that it only works with [[acrshort:http][HTTP]].
+
+{{{fourstar}}}
+@@latex:\noindent@@
+As demonstrated in autoref:fig:overall_ha_diagram , we used HAProxy and Keepalived with
+Kubernetes nodes as a load balancer, with HAProxy forwarding and routing traffic for the
+master nodes using the roundrobin algorithm to load balance traffic between the two masters.
+
+When constructing load-balanced topologies, it's critical to consider the load balancer's
+own availability as well as the availability of the real servers behind it.
+We used the Keepalived service to accomplish this.
+We used the Keepalived service to accomplish this.
+
+Keepalived employs a set of health checkers to maintain and manage load balanced server pools
+based on their health in a dynamic and adaptive manner.
+The [[ac:vrrp]] achieves high availability. [[acrshort:vrrp][VRRP]] is a critical component of router failover.
+Furthermore, keepalived adds a collection of hooks allowing for low-level and high-speed protocol interactions. 
+
+In a nutshell, the workflow of the two services will be as follow:\\
+If one of the master nodes fails, HAProxy will redirect traffic to the backup master node.
+The use of a single HAProxy service raises the issue of a single point of failure.
+In this scenario, we employed a backup HAProxy with a keepalived service that provides a
+floating acrshort:ip address for the user to use while monitoring the master HAProxy with
+Heartbeat signals and putting the backup HAProxy in master mode in the case of a master failure.
+{{{clearpage}}}
 **** Pacemaker
+@@latex:\noindent@@
+Pacemaker is a resource manager for high-availability clusters.
+
+It achieves high availability for your cluster services (a.k.a. resources) by using Corosync's
+messaging and membership features to detect and recover from node and resource level failures.
+
+It can do this for clusters of virtually any size and has a sophisticated dependency model
+that allows the administrator to precisely specify the relationships (both ordering and location)
+between cluster resources.
+
+{{{fourstar}}}
+We employed pacemaker with Syslog servers and [[https://www.gluster.org/][GlusterFS]] since these two services have special
+requirements that HAProxy cannot manage, and they do not have their own built-in failover.
+
+The amazing part about Pacemaker is that it allows you complete control over how your services
+and resources work.
+You can control every aspect of how the service behaves, from the type of resources it manages
+to the specification of specific resources to run on specific servers...etc.
+The extensibility and power of pacemaker came with a higher level of complexity to handle when
+compared to the two forms of high availability implementation we described earlier, but it is
+still a wonderful choice for building a robust infrastructure.
 *** Network Configuration
 
 #+NAME: fig:network_net_types_and_confs
 #+caption: Network types that we used and their configurations
-#+attr_latex: :width 12cm
+#+attr_latex: :width 9cm
 [[file:~/dox/wrk/pfe/docs/pfe_thesis/figures/network/net_conf_and_mnm_configuration.png]]
 **** Management Network
 **** Public Network & Bridged Network
 #+NAME: fig:network_public_bridge_network
 #+caption: How Public interfaces and bridge network work
-#+attr_latex: :width 12cm
+#+attr_latex: :width 8cm
 [[file:~/dox/wrk/pfe/docs/pfe_thesis/figures/network/network_bridge_private_pfe.png]]
 **** Private Network
 *** Storage
@@ -99,7 +164,27 @@ servers in the =/etc/resolv.conf=, and this is more than enough.
 :CUSTOM_ID: storage
 :END:
 **** GlusterFS
+@@latex:\noindent@@
+Gluster is a distributed file system that combines disk storage resources from numerous hosts
+into a single global namespace.
+With no vendor lock-in, enterprises can grow capacity, performance, and availability on demand
+across on-premises, public cloud, and hybrid environments.
+Thousands of companies in the media, healthcare, government, education, and financial services
+use [[https://www.gluster.org/][GlusterFS]] in their production.
+
+One of the advantages of utilizing GlusterFS is that it runs natively on most linux-based
+systems, including the one we use, and can be used in conjunction with other technologies
+such as [[acrshort:nfs][NFS]] for remote file access.
 **** NFS
+@@latex:\noindent@@
+ac:nfs is a distributed file system protocol created by Sun Microsystems (Sun) in 1984, that
+allows a user on a client computer to access files via a computer network in the same way
+that local storage is accessed.
+
+We used acrshort:nfs with Glusterfs to gain remote access to our file system, but acrshort:nfs
+has one limitation: it does not support the extending feature that Glusterfs provides.
+In this case, we used a technology called [[https://nfs-ganesha.github.io/][NFS-Ganesha]], which attempts to implement this
+feature and overcome the limitations of classical acrshort:nfs.
 **** NFS-Ganesha
 *** Security
 :PROPERTIES:
