@@ -67,16 +67,9 @@
 #+latex_header_extra: \newacronym{dhcp}{DHCP}{something here}
 #+latex_header_extra: \newacronym{bac}{BAC}{Blockchain Access Control}
 #+latex_header_extra: \newacronym{mqtt}{MQTT}{Message Queuing Telemetry Transport}
-#+latex_header_extra: \newacronym{divs}{DIVS}{Distributed Intelligent Video Surveillance}
 #+latex_header_extra: \newacronym{dl}{DL}{Deep Learning}
-#+latex_header_extra: \newacronym{gprs}{GPRS}{General Packet Radio System}
-#+latex_header_extra: \newacronym{civms}{CiVMS}{Central Intelligent Video Management System}
-#+latex_header_extra: \newacronym{psim}{PSIM}{Physical Security Information Management}
 #+latex_header_extra: \newacronym{cnn}{CNN}{Convolutional Neural Network}
-#+latex_header_extra: \newacronym{lcnn}{L-CNN}{Lightweight Convolution Neural Network}
-#+latex_header_extra: \newacronym{rcnn}{RCNN}{Region-based Convolution Neural Network}
-#+latex_header_extra: \newacronym{sbc}{SBC}{Single Board Computer}
-#+latex_header_extra: \newacronym{lpddr}{LPDDR}{Low-Power Double Data Rate}
+#+latex_header_extra: \newacronym{kvm}{KVM}{Kernel-based Virtual Machine}
  
 * Description                                              :noexport:ARCHIVE:
 #  Here is an example acronym definition
