@@ -30,6 +30,14 @@ Using edge computing almost eliminated network and computational latency.
 And gain more security and privacy of the data .
 
 ** Problem and Contributions
+@@latex:\noindent@@
+The Application of Edge computing resolves the problems of centralizing the processing on the
+cloud computing , and benefit the reduce processing times and improve application performance by
+distributing and locating the processing and storage near to data sources.
+
+In order to deploy a critical and real-time application such as acrlong:vss on edge computing,
+the edge computing infrastructure has to be Highly available, easy to deploy, scalable and secure.
+
 ** Purpose and goals
 @@latex:\noindent@@
 Recently about the topic of applying edge computing solution as a Modern computing paradigm,
