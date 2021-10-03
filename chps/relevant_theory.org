@@ -1,10 +1,62 @@
 * Relevant Theory 
+:PROPERTIES:
+:CUSTOM_ID: rel_th
+:END:
+@@latex:\noindent@@
+On this Chapter we will present the fundamental concepts and theories related to our edge computing
+infrastructure solution.
 ** Fog & Edge computing
+@@latex:\noindent@@
+Edge Computing is a recent paradigm, which moves computing application and services from centralized
+units into the logical extremes or at the closest locations to the source and provides data
+processing power there.
+
+Fog computing is an architecture that uses edge devices to carry out a substantial amount of computation,
+storage, communication locally and routed over the internet backbone, and most definitively has
+input and output from the physical world.
+
+Fog computing consists of Edge nodes directly performing physical input and output often to
+achieve sensor input, display output, or full closed loop process control, at the Edge or nearer
+to the Edge than centralized Clouds residing in very large data centers.
+Fog computing places edge nodes at the edge of the network, providing attractive computing
+capabilities, storage capacity, network services for edge devices.[1]
+
 ** Infrastructure as Code
 ** Virtualization
+Virtualization, in computing, is a term that refers to the various techniques, methods or
+approaches of creating a virtual version of something, such as a virtual hardware platform,
+operating system, storage device, or network resources,  by providing  hardware abstraction
+
+#+name: fig:virt_arch_over
+#+caption: virttualization architecture overview
+#+attr_latex: :width 13cm
+[[file:~/dox/wrk/pfe/docs/pfe_thesis/figures/virt/pic2.jpeg]]
+
+*** Hypervisor:
+@@latex:\noindent@@
+A hypervisor, also known as a virtual machine monitor, is a piece of computer software, firmware,
+or hardware that creates and manages virtual machines.
+A host machine is a computer on which a hypervisor runs one or more virtual machines.
+Each virtual machine is referred to as a guest machine.
+The hypervisor provides a virtual operating system to the guest operating systems. 
+
+**** Type1:
+@@latex:\noindent@@
+the Hypervisor interacts directly with the computer's physical hardware, the CPU, memory and storage
+example: xen server, Vmware Exsi, Microsoft Hyper-v
+
+**** Type2:
+@@latex:\noindent@@
+The Hypervisor that is installed as a Software Application on an existing operating system ,
+this type is used for client or end-user systems
+example: oracle virtual box, Vmware workstation
 ** Containerization
 ** Microservices
 ** High availability and Load Balancing
+#+name: fig:ha_overall
+#+caption: Virtualization Overall 
+#+attr_latex: :width 13cm
+[[file:~/dox/wrk/pfe/docs/pfe_thesis/figures/ha/overall_ha_diagram.jpeg]]
 * Local Variables                                           :noexport:ignore:
 # Local Variables:
 # mode: org
